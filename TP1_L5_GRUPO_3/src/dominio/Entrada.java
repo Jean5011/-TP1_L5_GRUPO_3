@@ -75,8 +75,8 @@ public abstract class Entrada {
 
 	@Override
 	public String toString() {
-		return "Entrada [idEntrada=" + idEntrada + ", nombreShow=" + nombreShow + ", fecha=" + fecha + ", horario="
-				+ horario + ", duracionAprox=" + duracionAprox + ", costo=" + costo + "]";
+		return "Entrada: idEntrada=" + idEntrada + ", nombreShow=" + nombreShow + ", fecha=" + fecha + ", horario="
+				+ horario + ", duracionAprox=" + duracionAprox + ", costo=" + costo;
 	}
 	
 }
