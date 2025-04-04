@@ -6,24 +6,23 @@ public abstract class Entrada {
 	private String fecha;
 	private String horario;
 	private int duracionAprox;
-	private int costo;
 	
 	private static int cont=0;
 	
-	public Entrada(String nombreShow, String fecha, String horario, int duracionAprox, int costo) {
-		super();
+	public Entrada(String nombreShow, String fecha, String horario, int duracionAprox) {
 		cont++;
 		this.idEntrada = cont;
 		this.nombreShow = nombreShow;
 		this.fecha = fecha;
 		this.horario = horario;
 		this.duracionAprox = duracionAprox;
-		this.costo = costo;
 	}
 	
 	public Entrada() {
 		cont++;
 	}
+	
+	public abstract double Sacar_Costo();
 
 	public int getIdEntrada() {
 		return idEntrada;
@@ -65,18 +64,10 @@ public abstract class Entrada {
 		this.duracionAprox = duracionAprox;
 	}
 
-	public int getCosto() {
-		return costo;
-	}
-
-	public void setCosto(int costo) {
-		this.costo = costo;
-	}
-
 	@Override
 	public String toString() {
 		return "Entrada: idEntrada=" + idEntrada + ", nombreShow=" + nombreShow + ", fecha=" + fecha + ", horario="
-				+ horario + ", duracionAprox=" + duracionAprox + ", costo=" + costo;
+				+ horario + ", duracionAprox=" + duracionAprox;
 	}
 	
 }
