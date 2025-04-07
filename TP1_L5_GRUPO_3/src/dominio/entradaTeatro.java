@@ -1,16 +1,21 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class entradaTeatro extends Entrada{
+public class entradaTeatro extends Entrada implements ICosto{
 	private static final double costo = 1350.50;
 	
-	private String genero;
-	private ArrayList<String> actoresPrincipales;
+	public static final String Drama ="Drama";
+	public static final String Teatro = "Teatro";
+	public static final String Comedia = "Comedia";
 	
-	public entradaTeatro(String nombreShow, String fecha, String horario, int duracionAprox, int costo, String genero,
-			ArrayList<String> actoresPrincipales) {
-		super();
+	private String genero;
+	private String[] actoresPrincipales;
+	
+	public entradaTeatro(String nombreShow, String fecha, String horario, int duracionAprox, String genero,
+			String[] actoresPrincipales) {
+		super(nombreShow, fecha, horario, duracionAprox);
 		this.genero = genero;
 		this.actoresPrincipales = actoresPrincipales;
 	}
@@ -25,22 +30,25 @@ public class entradaTeatro extends Entrada{
 		this.genero = genero;
 	}
 
-	public ArrayList<String> getActoresPrincipales() {
+	public String[] getActoresPrincipales() {
 		return actoresPrincipales;
 	}
 
-	public void setActoresPrincipales(ArrayList<String> actoresPrincipales) {
+	public void setActoresPrincipales(String[] actoresPrincipales) {
 		this.actoresPrincipales = actoresPrincipales;
 	}
 
 	@Override
 	public String toString() {
-		return "entradaTeatro [genero=" + genero + ", actoresPrincipales=" + actoresPrincipales + "]";
+		return "ID Entrada: " + getIdEntrada() + ", Show: " + getNombreShow() + ", Fecha: " + getFecha() + ", Horario: " + getHorario() + ", Duracion: " + getDuracionAprox() +
+				" Genero: " + genero + ", Actores Principales: " + Arrays.toString(actoresPrincipales) + " Costo: "+ Sacar_Costo();
 	}
 
 	@Override
 	public double Sacar_Costo() {
 		return costo;
 	}
+
+
 
 }

@@ -22,7 +22,6 @@ public abstract class Entrada {
 		cont++;
 	}
 	
-	public abstract double Sacar_Costo();
 
 	public int getIdEntrada() {
 		return idEntrada;
@@ -66,8 +65,7 @@ public abstract class Entrada {
 
 	@Override
 	public String toString() {
-		return "Entrada: idEntrada=" + idEntrada + ", nombreShow=" + nombreShow + ", fecha=" + fecha + ", horario="
-				+ horario + ", duracionAprox=" + duracionAprox;
+		return "ID Entrada:" + idEntrada + ", Show:" + nombreShow + ", Fecha=" + fecha + ", Horario=" + horario + ", Duracion=" + duracionAprox;
 	}
 	
 }

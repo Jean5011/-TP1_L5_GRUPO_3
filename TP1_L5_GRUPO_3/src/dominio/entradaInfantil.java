@@ -1,6 +1,6 @@
 package dominio;
 
-public class entradaInfantil extends Entrada{
+public class entradaInfantil extends Entrada implements ICosto{
 	private static final double costoMayor8 = 500;
 	private static final double costoMenor8 = 250;
 	
@@ -10,7 +10,7 @@ public class entradaInfantil extends Entrada{
 	
 	
 	public entradaInfantil(String nombreShow, String fecha, String horario, int duracionAprox, boolean souvenir, int edad) {
-		super();
+		super(nombreShow, fecha, horario, duracionAprox);
 		this.souvenir = souvenir;
 		this.edad = edad;
 	}
@@ -36,7 +36,13 @@ public class entradaInfantil extends Entrada{
 	
 	@Override
 	public String toString() {
-		return "entradaInfantil [souvenir=" + souvenir + "]";
+		if(souvenir) {
+			return "ID Entrada: " + getIdEntrada() + ", Show: " + getNombreShow() + ", Fecha: " + getFecha() + ", Horario: " + getHorario() + ", Duracion: " + getDuracionAprox() + 
+					" Souvenir: Si" + " Costo: "+ Sacar_Costo(); 
+		}else {
+			return "ID Entrada: " + getIdEntrada() + ", Show: " + getNombreShow() + ", Fecha: " + getFecha() + ", Horario: " + getHorario() + ", Duracion: " + getDuracionAprox() + 
+					" Souvenir: No" + " Costo: "+ Sacar_Costo();
+		}
 	}
 
 	@Override
